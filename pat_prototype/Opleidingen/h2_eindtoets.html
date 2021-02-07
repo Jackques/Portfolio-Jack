@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Version 2</title>
+
+<link href="Eindtoets.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+<script type="text/javascript" src="toets3.js"></script>
+<script language="JavaScript">
+function Test_result(cijfer) { 
+var hi= confirm("Let op, hiermee sluit u de module af. Weet u zeker dat u de module wil afsluiten?");
+if (hi== true){
+    alert("u heeft de module afgesloten");
+	var dikke = "updateS";
+	wip(2); // nummer van de module welke moet worden beindigd
+	$.ajax({
+			type: "POST", 
+			url: "../gameification.php", 
+			data: {"action" : dikke, "dome" : cijfer},
+			success: function(data){
+					alert(data);
+				},
+			error: function(t){
+				alert(JSON.stringify(t));
+										}
+		});
+    
+	}else{
+        //alert("Gelukkig, ik denk niet dat je uberhaupt alle antwoorden goed had.");
+    }
+	
+}
+function wip(cijfer){
+var dunne = "updateMA";
+	$.ajax({
+			type: "POST", 
+			url: "../gameification.php", 
+			data: {"action" : dunne, "dome" : cijfer},
+			success: function(data){
+					alert(data);
+				},
+			error: function(t){
+				alert(JSON.stringify(t));
+										}
+		});
+}
+
+
+/*
+var ans = new Array;
+var done = new Array;
+var score = 0;
+var tot_ques=8;
+ans[1]='b';
+ans[2]='b';
+ans[3]='b';
+ans[4]='b';
+ans[5]='b';
+ans[6]='b';
+ans[7]='b';
+ans[8]='b';
+
+function Engine(question, answer) {
+	if (answer != ans[question]) {
+		if (!done[question]) {
+			done[question] = -1;
+		}
+	}
+	else {
+		if (!done[question]) {
+			done[question] = -1;
+			score++;
+		}
+	}
+}
+
+function Test_result() {
+	if (score == tot_ques) {
+		alert('Oh!  You got full points!');
+	}
+	else {
+		alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.')
+	}
+	window.open ('h2_inleiding.html','_self');
+}
+*/
+</script>
+
+</head>
+<body>
+
+<script language="JavaScript">
+function setVisibility(id, visibility) {
+document.getElementById(id).style.display = visibility;
+}
+</script>
+
+<div class="ex" id="profile">
+		<h2>Opleidingen</h2>
+		<div><img border="0" src="competentiemanagement.jpg" width="420" height="75" /></div>
+      
+<div id="test1"><h2>Eindtoets</h2>
+<h3>1. Steeds meer ondernemingsraden zijn zich aan het professionaliseren en gaan zich bezig houden met strategisch ontwerpen. Dat vereist dat het OR zich meer als onderhandelaar en inhoudelijke sparringpartner gaat gedragen. 
+Met dit beeld voor ogen verandert de rol van de OR, een ‘professionele’ OR is niet alleen maar bezig de consequenties van voorgenomen besluiten te reguleren maar is nu ook in staat om het voorgenomen besluit te kunnen beïnvloeden. 
+Welke competenties heeft een OR-lid nodig om deze aanpak te kunnen realiseren?</h3><p>
+<TEXTAREA Name="toets2_vraag1" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group1" onClick="Engine(1, this.value)" type="radio" class="radio";>Mensen met faalangst spelen het liever op safe en zijn realistischer dan mensen die succesgemotiveerd zijn. <br>
+<input value="b" name="group1" onClick="Engine(1, this.value)" type="radio" class="radio">Mensen met faalangst zijn vaak terughoudender en onzekerder dan mensen die succesgemotiveerd zijn<br>
+<input value="c" name="group1" onClick="Engine(1, this.value)" type="radio" class="radio">Mensen met faalangst zijn eerder geneigd zichzelf de schuld te geven voor hun falen dan mensen die succesgemotiveerd zijn. <br>
+<input value="d" name="group1" onClick="Engine(1, this.value)" type="radio" class="radio">Mensen met faalangst ervaren een grotere 'emotionele beloning' als het falen uitblijft dan succesgemotiveerde mensen.<br />
+-->
+<br />
+
+<h3>2. Bij een ministerie moet op last van de hoogste baas een reorganisatie doorgevoerd worden. De verwachting is dat de reorganisatie van invloed zal zijn op de huidige formatie. De bestuurder is bereid om de eerste contouren voor te leggen aan de OR. Dat past in de cultuur en de onderlinge afspraken. Hij doet daarbij een beroep op de vertrouwelijkheid van alle OR-leden. 
+Welke 3 competenties heeft een ondernemingsraadlid nodig om het vertrouwen van alle partijen te behouden?
+</h3><p>
+<TEXTAREA Name="toets2_vraag2" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group2" onClick="Engine(2, this.value)" type="radio" class="radio">Iemand met veel zelfvertrouwen schrijft het meestal toe aan pech: volgende keer beter!<br>
+<input value="b" name="group2" onClick="Engine(2, this.value)" type="radio" class="radio">Iemand met veel zelfvertrouwen schrijft het meestal toe aan zichzelf: ze hadden gewoon beter hun best moeten doen<br>
+<input value="c" name="group2" onClick="Engine(2, this.value)" type="radio" class="radio">Iemand met veel zelfvertrouwen schrijft het meestal toe aan de situatie: het is ten slotte niet jouw schuld dat het examen moeilijk was of de brug open stond. <br></p>
+-->
+<br /><p2 onclick="setVisibility('invis2', 'inline'); setVisibility('test1', 'none');">Pagina 1/6<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div>
+
+
+<div id="invis2">
+<h3>3. Stel, de top van een organisatie heeft besloten om noch kerncompetenties noch de competentieprofielen op topniveau te laten vaststellen, dus geen organisatiebrede kerncompetenties. Een top-down benadering werd niet als van deze tijd gezien. Enkele onderdelen waren ook al op eigen houtje begonnen met competentiemanagement, ieder met zijn eigen externe adviseur. Bovendien meende de top dat deze bottom-up-werkwijze goed aansloot bij de diversiteit van de organisatie en dus goed paste bij de heersende organisatiecultuur. 
+Welke valkuilen ziet u en wat zou het standpunt van bijvoorbeeld de ondernemingsraad kunnen zijn?
+</h3><p>
+<TEXTAREA Name="toets2_vraag3" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group3" onClick="Engine(3, this.value)" type="radio" class="radio">Maak gebruik van een 'buddy-systeem' waarbij een persoon de verantwoordelijke is voor een ander, en als de ander iets fout doet, de buddy op het matje geroepen wordt. <br>
+<input value="c" name="group3" onClick="Engine(3, this.value)" type="radio" class="radio">Benoem een tiental mensen tot afdelingsmanager zodat er meer mensen zijn waarop rekenschap kan worden afgelegd<br>
+<input value="b" name="group3" onClick="Engine(3, this.value)" type="radio" class="radio">Benoem slechts één of twee afdelingshoofden met elk een gespecialiseerde taak en gebied waar ze rekenschap op moeten afleggen. <br>
+<input value="d" name="group3" onClick="Engine(3, this.value)" type="radio" class="radio">Zorg ervoor dat mensen hun eigen bijdragen bijhouden zodat het duidelijker wordt voor de leidinggevenden bij wie het probleem ligt. <br />
+-->
+<br />
+
+<h3>4. De nieuwe directeur heeft 100 dagen gevraagd om zich in de nieuwe organisatie in te werken. Na 100 dagen komt hij met een plan, namelijk om competentiemanagement breed uit te rollen, want dat heeft de organisatie volgens hem nodig. Hij had dat in zijn vorige baan ook al gedaan. Immers, de organisatie verkeert als het gaat om personeelsmanagement nog in het stenen tijdperk. Iedereen zit in zijn eigen hut zijn eigen jachtplannen te maken. Het gevaar bestaat zelfs dat men op dezelfde mammoet aan het jagen is zonder dat men dat van elkaar weet. Daarom heeft hij een complete blauwdruk uitgewerkt voor de invoering van competentiemanagement, waarin de competentie samenbindend leiderschap voor het gehele management een kerncompetentie is. Het plan is om de blauwdruk als een voorlichtingsnota naar iedereen te sturen. Als ondernemingsraadlid zit je met kromme tenen, want je kent je mensen, je hebt je wortels diep in de organisatie. 
+Vraag: Welke beren zie je op de weg?
+</h3><p>
+<TEXTAREA Name="toets2_vraag4" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="b" name="group4" onClick="Engine(4, this.value)" type="radio" class="radio">De huidige doelstellingen terugwerken tot ongeveer zes – acht doelstellingen<br>
+<input value="a" name="group4" onClick="Engine(4, this.value)" type="radio" class="radio">De huidige doelstellingen verbeteren, en eventueel een aantal belangrijke doelstellingen toevoegen<br>
+<input value="c" name="group4" onClick="Engine(4, this.value)" type="radio" class="radio">De doelstellingen zodanig bijwerken dat ze zoveel mogelijk terrein bedekken, waardoor er minder over het hoofd wordt gezien<br></p>
+-->
+<br /><p2 onclick="setVisibility('invis3', 'inline'); setVisibility('invis2', 'none');">Pagina 2/6<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div> 
+
+<div id="invis3">
+<h3>5. U wordt door een bestuurder als OR gevraagd een mening te geven over de wijze waarop de profilering plaats zou moeten vinden. Het betreft een directie met een nieuwe directeur en een zestal afdelingshoofden. De nieuwe directeur wil veel werk maken van het personeelsbeleid. Het personeelsbeleid heeft onder zijn voorganger weinig aandacht gekregen. De afdelingshoofden werken gemiddeld zo’n 3 jaar binnen de directie. Er kan gesproken worden over een hoge mate van achterstallig onderhoud waar het gaat om aandacht en zorg voor het personeel. Het arbeidsverzuim is gestegen tot ruim 11%. Vraag: Hoe zou u dit percentage arbeidsverzuim terugdringen?</h3><p>
+<TEXTAREA Name="toets2_vraag5" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door een strak schema in elkaar te zetten en het te volgen. Beloon jezelf als je dingen goed doet, en bestraf de fouten<br>
+<input value="d" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door rust en structuur te balanceren, evenals straf en beloning<br>
+<input value="c" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door niet te veel te focussen op het doel. Kijk ook naar de dingen die mis kunnen gaan<br>
+<input value="b" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door positief te denken en jezelf voor goed gedrag te belonen<br />
+-->
+<br />
+
+<h3>6. Tijdens een profileringbijeenkomst van bankmedewerkers wordt plotseling een opmerking gemaakt door een medewerker:  ‘ik kan wel gek zijn om hier mijn nek in de strop te steken’. Geschrokken stopt de begeleider de bijeenkomst en vraagt de deelnemer waar deze opmerking vandaan komt. ‘Nou’, zegt de medewerker, ‘dat is heel simpel, als ik hier ga vertellen welke competenties belangrijk zijn in mijn functie en ik voldoe daar niet aan dan loop ik de kans uit mijn functie ontheven te worden.’
+De begeleider gaat terug naar de opdrachtgever. Inderdaad blijkt op de afdeling van de betreffende medewerker een reorganisatie afgekondigd te zijn waarbij 20% van de medewerkers van functie zal moeten wisselen. De adviseur gaat zijn licht opsteken bij de OR. 
+Vraag: Hoe vind je dat het OR zou moeten reageren?
+</h3><p>
+<TEXTAREA Name="toets2_vraag6" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Er zo veel mogelijk mensen bij betrekken zodat je een gebalanceerd geheel aan meningen en perspectieven krijgt<br>
+<input value="c" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Experts op verschillende vlakken erbij betrekken zodat je beter geïnformeerde ideeën kan vormen<br>
+<input value="b" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Met een klein maar hecht en gebalanceerd team <br>
+<input value="d" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Alleen<br></p>
+-->
+<br /><p2 onclick="setVisibility('invis4', 'inline'); setVisibility('invis3', 'none');">Pagina 3/6<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div> 
+
+<div id="invis4">
+<h3>7. Het komt nogal eens voor dat het hoofdkantoor centraal gelegen is. 
+Er is besloten om competentiemanagement in te voeren. Een werkgroep heeft profielen gemaakt voor alle functies in de organisatie. 
+In de werkgroep zat een vertegenwoordiging van de leiding en de staf en enkele adviseurs. 
+Toen bleek al uit de discussies dat de leiding weinig zicht heeft op de competenties die de adviseurs nodig hebben om hun werk goed te kunnen doen. 
+Vanuit het veld zijn vragen gesteld over de betrouwbaarheid van het oordeel van de leidinggevende over de competenties van de adviseurs. 
+Immers, zij doen hun werk geheel zelfstandig. 
+Vraag: Hoe zou de ondernemingsraad moeten adviseren over de voorgenomen vaststelling van profielen?
+</h3><p>
+<TEXTAREA Name="toets2_vraag7" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="b" name="group5" onClick="Engine(7, this.value)" type="radio" class="radio">Vertel hem dat hij gelijk heeft, en dat het nadenken over een idee de reden is dat jullie samen zijn. Vraag over welke onderdelen hij vindt dat er te weinig over nagedacht is, en waar hij de grens zou trekken dat dat geen probleem meer is. <br>
+<input value="a" name="group5" onClick="Engine(7, this.value)" type="radio" class="radio">Vertel hem dat teveel denken, analyseren en theorie een voorstel te ver zou verwateren om nog iets nuttigs of creatiefs te behouden. 'Analysis-paralysis' ligt op de loer. <br>
+<input value="c" name="group5" onClick="Engine(7, this.value)" type="radio" class="radio">Vertel hem dat een opstel nooit helemáál doordacht kan worden. Zolang een idee nog niet is gerealiseerd, zullen er altijd onduidelijkheden blijven bestaan. Dit soort opmerkingen komen voort uit een tekort aan zelfvertrouwen en durf.<br /><br />
+--><br />
+
+<h3>8. Wat iemand in het verleden gedaan heeft, voorspelt toekomstig gedrag in vergelijkbare situaties. 
+In een selectie-interview zijn we erop uit informatie te verzamelen over de mate waarin een kandidaat bepaalde vaardigheden en competenties ontwikkeld heeft. 
+Een uitgangspunt hierbij is dat als mensen in het verleden in situaties bepaalde vaardigheden hebben toegepast, ze dat in de toekomst ook kunnen. 
+Praten over wat iemand zou doen leidt echter alleen maar tot sociaal wenselijke uitwijdingen. Dat zegt dan ook niets over wat hij echt kan. 
+Vraag: Welke mogelijkheden heeft u om achter de vaardigheden van uw gesprekspartner te komen?
+</h3><p>
+<TEXTAREA Name="toets2_vraag8" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter is vooral een negatieve kracht die verandering probeert te voorkomen, dus je kan hem beter zo veel mogelijk negeren. Negatief denken werkt contraproductief als je resultaten wilt bereiken<br>
+<input value="c" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter is een onderdeel van je verstand dat je waarschuwt voor gevaren, dus je kan er beter naar luisteren<br>
+<input value="b" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter is vooral een negatieve kracht die verandering probeert te voorkomen, maar het kan nuttig zijn om naar hem te luisteren zodat je wat beter voorbereid bent op wat er komen gaat<br>
+<input value="d" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter geeft vaak een genuanceerd beeld van wat de verandering in kan houden, zowel positief als negatief. Je kan het beste met hem een gebalanceerd dialoog aan gaan. <br></p>
+--><br />
+</p>
+<br /><p2 onclick="setVisibility('invis5', 'inline'); setVisibility('invis4', 'none');">Pagina 4/6<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div>
+
+<div id="invis5">
+<h3>9. Leg contact met iemand binnen de leeromgeving die een ander profiel volgt dan u, en vraag hem of haar naar een situatie in het verleden en hoe ze in die situatie gehandeld hebben. Let erop of het in de verleden tijd wordt verteld. </h3><p>
+<TEXTAREA Name="toets2_vraag9" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door een strak schema in elkaar te zetten en het te volgen. Beloon jezelf als je dingen goed doet, en bestraf de fouten<br>
+<input value="d" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door rust en structuur te balanceren, evenals straf en beloning<br>
+<input value="c" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door niet te veel te focussen op het doel. Kijk ook naar de dingen die mis kunnen gaan<br>
+<input value="b" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door positief te denken en jezelf voor goed gedrag te belonen<br />
+-->
+<br />
+
+<h3>10. Vanwege efficiencyoverwegingen zijn twee afdelingen samengevoegd tot één grote afdeling. Oorspronkelijk bestonden deze afdelingen uit twee verschillende organisatieonderdelen met ieder een eigen beleidsterrein, en hebben ze weinig met elkaar gemeen. De leidinggevende van de nieuw geformeerde afdeling wil dat er goed wordt samengewerkt omdat dit de kwaliteit van het werk ten goede komt, maar toch blijft er sprake van twee bloedgroepen. Marieke is één van de medewerkers die zeer gesteld is op haar eigen(bloed) groep. Marieke heeft een gesprek met haar leidinggevende. Kennelijk loopt dat fout. Na afloop komt Marieke naar jou toe met de klacht dat de leidinggevende beweerde dat het haar schuld is dat de samenwerking op de afdeling onder de maat blijft. 
+Vraag: Hoe zou de OR kunnen reageren op Marieke?
+</h3><p>
+<TEXTAREA Name="toets2_vraag10" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Er zo veel mogelijk mensen bij betrekken zodat je een gebalanceerd geheel aan meningen en perspectieven krijgt<br>
+<input value="c" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Experts op verschillende vlakken erbij betrekken zodat je beter geïnformeerde ideeën kan vormen<br>
+<input value="b" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Met een klein maar hecht en gebalanceerd team <br>
+<input value="d" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Alleen<br></p>
+-->
+<br /><p2 onclick="setVisibility('invis6', 'inline'); setVisibility('invis5', 'none');">Pagina 5/6<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div>
+
+<div id="invis6">
+<h3>11. De leiding wilt in het kader van de POP-gesprekken dat alle medewerkers een 360-graden feedback ondergaan. Alle medewerkers hebben een schrijven ontvangen waarin een voorstel wordt gedaan wie over wie de competentielijst zal invullen. Er is voor gezorgd dat bij deze referenten altijd iemand van de leiding zit, altijd een collega en altijd iemand van de ondersteuning. De lijsten worden via een programma automatisch verwerkt tot een rapport. Het voorstel is om dat rapport te bespreken in een te plannen gesprek tussen leidinggevende en medewerker. De OR wordt hiermee pas geconfronteerd als het proces al in volle gang is. 
+Vraag: Vindt u dat de OR zou moeten reageren en zo ja, hoe?
+</h3><p>
+<TEXTAREA Name="toets2_vraag11" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door een strak schema in elkaar te zetten en het te volgen. Beloon jezelf als je dingen goed doet, en bestraf de fouten<br>
+<input value="d" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door rust en structuur te balanceren, evenals straf en beloning<br>
+<input value="c" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door niet te veel te focussen op het doel. Kijk ook naar de dingen die mis kunnen gaan<br>
+<input value="b" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door positief te denken en jezelf voor goed gedrag te belonen<br />
+-->
+<br />
+
+<h3>12. Leg contact met uw projectgroep en onderga zelf een anonieme 360-graden feedback sessie. Bespreek de resultaten en ga voor jezelf na of er nieuwe informatie over uw eigen manier van aanpakken naar boven komt. 
+</h3><p>
+<TEXTAREA Name="toets2_vraag12" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Er zo veel mogelijk mensen bij betrekken zodat je een gebalanceerd geheel aan meningen en perspectieven krijgt<br>
+<input value="c" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Experts op verschillende vlakken erbij betrekken zodat je beter geïnformeerde ideeën kan vormen<br>
+<input value="b" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Met een klein maar hecht en gebalanceerd team <br>
+<input value="d" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Alleen<br></p>
+-->
+<center>
+<input onClick="Test_result(1)" type="image" src="submit.png">
+</center>
+</form>
+</div>
+
+
+<hr>
+
+</div>
+</div>
+
+<div class="ex" id="leaderboard">
+   <iframe src="inhoud_h2.php" height="650" width="175" frameborder="0">
+	<p>Your browser does not support iframes.</p>
+	</iframe>
+</div>
+
+
+
+</body>
+</html>

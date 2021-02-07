@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Version 1</title>
+
+<link href="Eindtoets.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+<script type="text/javascript" src="toets3.js"></script>
+<script language="JavaScript">
+function Test_result(cijfer) { 
+var hi= confirm("Let op, hiermee sluit u de module af. Weet u zeker dat u de module wil afsluiten?");
+if (hi== true){
+    alert("u heeft de module afgesloten");
+	var dikke = "updateS";
+	wip(1); // nummer van de module welke moet worden beindigd
+	$.ajax({
+			type: "POST", 
+			url: "../gameification.php", 
+			data: {"action" : dikke, "dome" : cijfer},
+			success: function(data){
+					alert(data);
+				},
+			error: function(t){
+				alert(JSON.stringify(t));
+										}
+		});
+    
+	}else{
+        //alert("Gelukkig, ik denk niet dat je uberhaupt alle antwoorden goed had.");
+    }
+	
+}
+function wip(cijfer){
+var dunne = "updateMA";
+	$.ajax({
+			type: "POST", 
+			url: "../gameification.php", 
+			data: {"action" : dunne, "dome" : cijfer},
+			success: function(data){
+					alert(data);
+				},
+			error: function(t){
+				alert(JSON.stringify(t));
+										}
+		});
+}
+
+		
+function setVisibility(id, visibility) {
+document.getElementById(id).style.display = visibility;
+}
+</script>
+
+</head>
+
+<body>
+<script language="JavaScript">
+function setVisibility(id, visibility) {
+document.getElementById(id).style.display = visibility;
+}
+</script>
+
+<div class="ex" id="profile">
+		<h2>Opleidingen</h2>
+		<div><a href="Zelfsturing.html"><img border="0" src="Zelfsturing2.png" width="420" height="75" /></div></a>
+      
+<div id="test1"><h2>Eindtoets</h2>
+<h3>1. Wat zijn de belangrijkste verschillen tussen mensen met faalangst en mensen die succesgemotiveerd zijn? </h3><p>
+<input value="a" name="toets1_vraag1" onChange="changeBack(this.value, this.name)" type="radio" class="radio";>Mensen met faalangst spelen het liever op safe en zijn realistischer dan mensen die succesgemotiveerd zijn. <br>
+<input value="b" name="toets1_vraag1" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Mensen met faalangst zijn vaak terughoudender en onzekerder dan mensen die succesgemotiveerd zijn<br>
+<input value="c" name="toets1_vraag1" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Mensen met faalangst zijn eerder geneigd zichzelf de schuld te geven voor hun falen dan mensen die succesgemotiveerd zijn. <br>
+<input value="d" name="toets1_vraag1" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Mensen met faalangst ervaren een grotere 'emotionele beloning' als het falen uitblijft dan succesgemotiveerde mensen.
+<br /><br />
+
+<h3>2. Op welke manier kan je iemand met veel zelfvertrouwen herkennen aan de manier waarop hij of zij om gaat met mislukking?</h3><p>
+<input value="a" name="toets1_vraag2" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Iemand met veel zelfvertrouwen schrijft het meestal toe aan pech: volgende keer beter!<br>
+<input value="b" name="toets1_vraag2" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Iemand met veel zelfvertrouwen schrijft het meestal toe aan zichzelf: ze hadden gewoon beter hun best moeten doen<br>
+<input value="c" name="toets1_vraag2" onChange="changeBack(this.value, this.name)" type="radio"class="radio">Iemand met veel zelfvertrouwen schrijft het meestal toe aan de situatie: het is ten slotte niet jouw schuld dat het examen moeilijk was of de brug open stond. <br></p>
+
+<br /><p2 onclick="setVisibility('invis2', 'inline'); setVisibility('test1', 'none');">Pagina 1/4<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div>
+
+
+<div id="invis2">
+<h3>3. In jouw organisatie is weinig zelfsturendheid en wordt er weinig verantwoordelijkheid genomen voor problemen op bepaalde afdelingen. Hoe kan je dat probleem aanpakken</h3><p>
+<input value="a" name="toets1_vraag3" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Maak gebruik van een 'buddy-systeem' waarbij een persoon de verantwoordelijke is voor een ander, en als de ander iets fout doet, de buddy op het matje geroepen wordt. <br>
+<input value="c" name="toets1_vraag3" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Benoem een tiental mensen tot afdelingsmanager zodat er meer mensen zijn waarop rekenschap kan worden afgelegd<br>
+<input value="b" name="toets1_vraag3" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Benoem slechts één of twee afdelingshoofden met elk een gespecialiseerde taak en gebied waar ze rekenschap op moeten afleggen. <br>
+<input value="d" name="toets1_vraag3" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Zorg ervoor dat mensen hun eigen bijdragen bijhouden zodat het duidelijker wordt voor de leidinggevenden bij wie het probleem ligt. 
+<br /><br />
+
+<h3>4. Je merkt dat jouw afdeling onder de maat presteert, en je wilt een reorganisatie doorvoeren. Wat zouden enkele ideeën zijn om je afdeling in de toekomst beter te laten lopen?</h3><p>
+<input value="b" name="toets1_vraag4" onChange="changeBack(this.value, this.name)" type="radio" class="radio">De huidige doelstellingen terugwerken tot ongeveer zes – acht doelstellingen<br>
+<input value="a" name="toets1_vraag4" onChange="changeBack(this.value, this.name)" type="radio" class="radio">De huidige doelstellingen verbeteren, en eventueel een aantal belangrijke doelstellingen toevoegen<br>
+<input value="c" name="toets1_vraag4" onChange="changeBack(this.value, this.name)" type="radio" class="radio">De doelstellingen zodanig bijwerken dat ze zoveel mogelijk terrein bedekken, waardoor er minder over het hoofd wordt gezien<br></p>
+
+<br /><p2 onclick="setVisibility('invis3', 'inline'); setVisibility('invis2', 'none');">Pagina 2/4<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div> 
+
+<div id="invis3">
+<h3>5. Wat zijn enkele manieren om je eigen doelstellingen te behalen? </h3><p>
+<input value="a" name="toets1_vraag5" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Door een strak schema in elkaar te zetten en het te volgen. Beloon jezelf als je dingen goed doet, en bestraf de fouten<br>
+<input value="d" name="toets1_vraag5" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Door rust en structuur te balanceren, evenals straf en beloning<br>
+<input value="c" name="toets1_vraag5" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Door niet te veel te focussen op het doel. Kijk ook naar de dingen die mis kunnen gaan<br>
+<input value="b" name="toets1_vraag5" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Door positief te denken en jezelf voor goed gedrag te belonen
+<br /><br />
+
+<h3>6. Wat is de beste manier van ideeën ontwikkelen?</h3><p>
+<input value="a" name="toets1_vraag6" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Er zo veel mogelijk mensen bij betrekken zodat je een gebalanceerd geheel aan meningen en perspectieven krijgt<br>
+<input value="c" name="toets1_vraag6" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Experts op verschillende vlakken erbij betrekken zodat je beter geïnformeerde ideeën kan vormen<br>
+<input value="b" name="toets1_vraag6" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Met een klein maar hecht en gebalanceerd team <br>
+<input value="d" name="toets1_vraag6" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Alleen<br></p>
+
+<br /><p2 onclick="setVisibility('invis4', 'inline'); setVisibility('invis3', 'none');">Pagina 3/4<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div> 
+
+<div id="invis4">
+<h3>7. Iemand zegt over je voorstel dat het onvoldoende is doordacht. Hoe ga je daarmee om?</h3><p>
+<input value="b" name="toets1_vraag7" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Vertel hem dat hij gelijk heeft, en dat het nadenken over een idee de reden is dat jullie samen zijn. Vraag over welke onderdelen hij vindt dat er te weinig over nagedacht is, en waar hij de grens zou trekken dat dat geen probleem meer is. <br>
+<input value="a" name="toets1_vraag7" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Vertel hem dat teveel denken, analyseren en theorie een voorstel te ver zou verwateren om nog iets nuttigs of creatiefs te behouden. 'Analysis-paralysis' ligt op de loer. <br>
+<input value="c" name="toets1_vraag7" onChange="changeBack(this.value, this.name)" type="radio" class="radio">Vertel hem dat een opstel nooit helemáál doordacht kan worden. Zolang een idee nog niet is gerealiseerd, zullen er altijd onduidelijkheden blijven bestaan. Dit soort opmerkingen komen voort uit een tekort aan zelfvertrouwen en durf.<br /><br />
+
+<h3>8. Je persoonlijke grenzen worden door een denkbeeldige 'grenswachter' bewaakt. Hoe ga je met deze grenswachter om?</h3><p>
+<input value="a" name="toets1_vraag8" onChange="changeBack(this.value, this.name)" type="radio" class="radio">De grenswachter is vooral een negatieve kracht die verandering probeert te voorkomen, dus je kan hem beter zo veel mogelijk negeren. Negatief denken werkt contraproductief als je resultaten wilt bereiken<br>
+<input value="c" name="toets1_vraag8" onChange="changeBack(this.value, this.name)" type="radio" class="radio">De grenswachter is een onderdeel van je verstand dat je waarschuwt voor gevaren, dus je kan er beter naar luisteren<br>
+<input value="b" name="toets1_vraag8" onChange="changeBack(this.value, this.name)" type="radio" class="radio">De grenswachter is vooral een negatieve kracht die verandering probeert te voorkomen, maar het kan nuttig zijn om naar hem te luisteren zodat je wat beter voorbereid bent op wat er komen gaat<br>
+<input value="d" name="toets1_vraag8" onChange="changeBack(this.value, this.name)" type="radio" class="radio">De grenswachter geeft vaak een genuanceerd beeld van wat de verandering in kan houden, zowel positief als negatief. Je kan het beste met hem een gebalanceerd dialoog aan gaan. <br></p>
+
+</p><center>
+<input onClick="Test_result(5)" type="image" src="submit.png">
+</center>
+</form>
+<hr>
+
+</div>
+</div>
+
+<div class="ex" id="leaderboard">
+   <iframe src="inhoud_h1.php" height="650" width="175" frameborder="0">
+	<p>Your browser does not support iframes.</p>
+	</iframe>
+</div>
+
+
+</body>
+</html>

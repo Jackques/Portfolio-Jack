@@ -1,0 +1,38 @@
+.moodboard_container{
+height:auto;
+white-space:nowrap;
+}
+.afb_container{
+display:inline-block;
+}
+.moodboard_afb, .moodboard_afb_large{
+max-width:100%;
+height:auto;
+width:50%;
+border:none;
+}
+.moodboard_afb_wrapper{
+/*werkt nog niet goed in de app, staat ook in de html in commentz*/
+-moz-box-shadow:inset 0 0 10px #000000;
+-webkit-box-shadow:inset 0 0 10px #000000;
+box-shadow:inset 0 0 10px #000000;
+display:inline-block;
+}
+
+.moodboard_gk_afb1, .moodboard_gk_afb2{
+height:auto;
+}
+
+.md_textfield_vraag{
+background: url("images/note_backg.png") repeat !important;
+background-position:0px 28px !important;
+margin: .8em 0 !important;
+display:none;
+}
+#mb_afb_vraag{
+font-family: Helvetica,Arial,sans-serif;
+font-size:1.2em;
+color:#b7b7b7;
+text-shadow:none;
+display:inline;
+}

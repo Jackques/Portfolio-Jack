@@ -1,0 +1,48 @@
+:focus {
+	outline:0;
+}
+.add-sticky {
+	cursor: default;
+	position:absolute;
+	top:1px;
+	left:1px;
+	font-size:200%;
+	background:#000;
+	color:#fff;
+	border:2px solid #fff;
+	border-radius:40px;
+	-webkit-border-radius:40px;
+	-moz-border-radius:40px;
+	text-align:center;
+	line-height:25px;
+	width:30px;
+	height:30px;
+}
+.add-sticky:hover {
+	background: #474747;
+}
+.sticky {
+	width:150px;
+	background:url(../images/sticky-bg.png);
+	background-repeat:no-repeat;
+}
+.sticky-content {
+	min-height:100px;
+	margin-left:15px;
+	padding:5px;
+}
+.sticky-header {
+	padding:5px;
+}
+.sticky-status {
+	color:#ccc;
+	padding:5px;
+}
+.close-sticky {
+	background:url(../images/delete.png);
+	background-repeat:no-repeat;
+	color:rgba(255,255,255,0);
+	float:right;
+	cursor:default;
+	padding:1px 5px;
+}

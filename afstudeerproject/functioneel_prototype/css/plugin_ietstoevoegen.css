@@ -1,0 +1,47 @@
+#iets_toevoegen{
+position:fixed;
+top:25%;
+left:10%;
+
+width:80%;
+height:70%;
+border-radius: 15px;
+
+background: #7d7e7d; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #7d7e7d 0%,#0e0e0e 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#sluitbutton{
+position: absolute;
+top:1%;
+right:1%;
+}
+
+#plugin_container{
+padding:1%;
+margin-top:40px;
+}
+
+#titel_plugin{
+position: absolute;
+top:1%;
+left:1%;
+}
+#titel_plugin_text{
+font-family:Tahoma,Geneva,Kalimati,sans-serif;
+color:#ffffff;
+font-style:normal;
+font-size:2em;
+text-shadow: 0 0 1px #ffffff;
+
+margin-top:1%;
+}
+#categorien_apps{
+text-align:center;
+}

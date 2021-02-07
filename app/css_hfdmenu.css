@@ -1,0 +1,125 @@
+/* when to use the css @media? instead of,.. or with the html <meta> tag? */
+@media all and (max-width: 600px) {
+	body {
+		background-color:black;
+		margin:0px;
+		padding:0px;
+	}
+}
+
+@media all and (min-width: 600px) {
+	body {
+		background-color:black;
+		margin:0px;
+		padding:0px;
+	}
+}
+
+.page1{
+/*position:static;*/
+background-color:#424242;
+background-image:none;
+}
+
+.hfdm_item_wrapper{
+background: rgb(58,58,58); /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNhM2EzYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzQyNDI0MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0NDQ0NDQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, rgba(58,58,58,1) 0%, rgba(66,66,66,1) 50%, rgba(68,68,68,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(58,58,58,1)), color-stop(50%,rgba(66,66,66,1)), color-stop(100%,rgba(68,68,68,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(58,58,58,1) 0%,rgba(66,66,66,1) 50%,rgba(68,68,68,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(58,58,58,1) 0%,rgba(66,66,66,1) 50%,rgba(68,68,68,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(58,58,58,1) 0%,rgba(66,66,66,1) 50%,rgba(68,68,68,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(58,58,58,1) 0%,rgba(66,66,66,1) 50%,rgba(68,68,68,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3a3a3a', endColorstr='#444444',GradientType=0 ); /* IE6-8 */
+
+background-color:white;
+height:3em;
+min-height:35px;
+}
+
+#hfdm_headbar{
+position:fixed;
+width:100%;
+min-height:35px;
+z-index: 2;
+}
+#hfdm_headbar_werkvormen{
+position:fixed;
+width:100%;
+min-height:35px;
+background:none;
+background-color:84ad81;
+z-index: 2;
+}
+
+.hfdm_header, .hfdm_item{
+padding-left:5%;
+padding-right:5%;
+/* width:220px; */
+height:100%;
+}
+.hfdm_item{
+overflow:hidden;
+padding-top:1.00%;
+}
+#hfdm_title{
+color:white;
+font-size:150%;/*dit veranderen naar em waarde maakt de letters op mobiel niet kleiner/groter, schaalt toch niet mooi en zorgt ervoor dat de animatie slide naar beneden niet goed werkt.. kutzooi*/
+text-align:center;
+margin-top:5px;
+margin-bottom:5px;
+text-shadow:none;
+white-space:nowrap;
+}
+
+#hfdm_number, #hfdm_text, #hfdm_text_maakprofiel, #hfdm_text_user{
+font-family: Helvetica,Arial,sans-serif;
+font-size:1.5em;
+color:#b7b7b7;
+text-shadow:none;
+}
+#hfdm_number{
+width:50px;
+display:inline;
+margin-right:20px;
+}
+#hfdm_text, #hfdm_text_maakprofiel, #hfdm_text_user{
+display:inline;
+}
+#hfdm_besch{
+font-family: Helvetica,Arial,sans-serif;
+font-size:1.0em;
+display:none;/**/
+text-shadow:none;
+margin-top:3%;
+}
+.hfdm_locked{
+display:inline-block;
+height:32px;
+width:32px;
+vertical-align:bottom;
+margin-left:20px;
+background-image:url('images/lock.png');
+}
+.ganaar_but{
+border:none;
+border-top:2px solid;
+display:none;/**/
+color:#444444;
+}
+.ganaar_but p{
+text-align:center;
+}
+.ganaar_but p a{
+font-family: Helvetica,Arial,sans-serif;
+font-size:1.2em;
+font-weight: bold;
+color:#444444 !important;
+text-decoration:none;
+margin:0px;
+margin-top:10px;
+margin-bottom:10px;
+padding:0px;
+text-shadow:none;
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Version 1</title>
+
+<link href="Eindtoets.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+<script type="text/javascript" src="toets3.js"></script>
+<script language="JavaScript">
+function Test_result(cijfer) { 
+var hi= confirm("Let op, hiermee sluit u de module af. Weet u zeker dat u de module wil afsluiten?");
+if (hi== true){
+    alert("u heeft de module afgesloten");
+	var dikke = "updateS";
+	wip(3); // nummer van de module welke moet worden beindigd
+	$.ajax({
+			type: "POST", 
+			url: "../gameification.php", 
+			data: {"action" : dikke, "dome" : cijfer},
+			success: function(data){
+					alert(data);
+				},
+			error: function(t){
+				alert(JSON.stringify(t));
+										}
+		});
+    
+	}else{
+        //alert("Gelukkig, ik denk niet dat je uberhaupt alle antwoorden goed had.");
+    }
+	
+}
+function wip(cijfer){
+var dunne = "updateMA";
+	$.ajax({
+			type: "POST", 
+			url: "../gameification.php", 
+			data: {"action" : dunne, "dome" : cijfer},
+			success: function(data){
+					alert(data);
+				},
+			error: function(t){
+				alert(JSON.stringify(t));
+										}
+		});
+}
+
+/*
+var ans = new Array;
+var done = new Array;
+var score = 0;
+var tot_ques=8;
+ans[1]='b';
+ans[2]='b';
+ans[3]='b';
+ans[4]='b';
+ans[5]='b';
+ans[6]='b';
+ans[7]='b';
+ans[8]='b';
+
+function Engine(question, answer) {
+	if (answer != ans[question]) {
+		if (!done[question]) {
+			done[question] = -1;
+		}
+	}
+	else {
+		if (!done[question]) {
+			done[question] = -1;
+			score++;
+		}
+	}
+}
+
+function Test_result() {
+	if (score == tot_ques) {
+		alert('Oh!  You got full points!');
+	}
+	else {
+		alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.')
+	}
+		window.open ('h3_inleiding.html','_self');
+}
+*/
+function setVisibility(id, visibility) {
+document.getElementById(id).style.display = visibility;
+}
+</script>
+
+</head>
+
+<script language="JavaScript">
+function setVisibility(id, visibility) {
+document.getElementById(id).style.display = visibility;
+}
+</script>
+
+
+<div class="ex" id="profile">
+		<h2>Opleidingen</h2>
+		<div><img border="0" src="bewustzijn.jpg" width="420" height="75" /></div>
+      
+<div id="test1"><h2>Eindtoets</h2>
+<h3>1. Een filosoof genaamd Confucius zei ooit eens: Weten dat je weet, wat je weet, en dat je niet weet, wat je niet weet, dat is echte kennis,
+wat bedoelde hij hiermee? </h3><p>
+<TEXTAREA Name="toets3_vraag1" rows="4" cols="50" onChange="changeBack(this.value, this.name)"></TEXTAREA> 
+<!--
+<input value="a" name="group1" onClick="Engine(1, this.value)" type="radio" class="radio";>Mensen met faalangst spelen het liever op safe en zijn realistischer dan mensen die succesgemotiveerd zijn. <br>
+<input value="b" name="group1" onClick="Engine(1, this.value)" type="radio" class="radio">Mensen met faalangst zijn vaak terughoudender en onzekerder dan mensen die succesgemotiveerd zijn<br>
+<input value="c" name="group1" onClick="Engine(1, this.value)" type="radio" class="radio">Mensen met faalangst zijn eerder geneigd zichzelf de schuld te geven voor hun falen dan mensen die succesgemotiveerd zijn. <br>
+<input value="d" name="group1" onClick="Engine(1, this.value)" type="radio" class="radio">Mensen met faalangst ervaren een grotere 'emotionele beloning' als het falen uitblijft dan succesgemotiveerde mensen.
+<br />
+-->
+<br />
+
+<h3>2. Kinderen zijn vaak onbewust voortdurend bezig met hun eigen ontwikkeling. Meestal gaat ze dit goed af ondanks dat ze geen gebruik maken van officiele kennisbronnen zoals workshops, trainingen, coaching etc. op school na. 
+In werkelijkheid maken ze weldegelijk gebruik van dezelfde soort bronnen maar wordt het zo natuurlijk niet genoemd of opgevat. Van welke concrete kennisbronnen maakt een kind in zijn of haar belevingswereld dan wel gebruik? Wat kunnen wij hier vanuit onze situatie van leren?</h3><p>
+<TEXTAREA Name="toets3_vraag2" rows="4" cols="50" onChange='changeBack(this.value, this.name)'></TEXTAREA> 
+<!--
+<input value="a" name="group2" onClick="Engine(2, this.value)" type="radio" class="radio">Iemand met veel zelfvertrouwen schrijft het meestal toe aan pech: volgende keer beter!<br>
+<input value="b" name="group2" onClick="Engine(2, this.value)" type="radio" class="radio">Iemand met veel zelfvertrouwen schrijft het meestal toe aan zichzelf: ze hadden gewoon beter hun best moeten doen<br>
+<input value="c" name="group2" onClick="Engine(2, this.value)" type="radio" class="radio">Iemand met veel zelfvertrouwen schrijft het meestal toe aan de situatie: het is ten slotte niet jouw schuld dat het examen moeilijk was of de brug open stond. <br></p>
+-->
+<br /><p2 onclick="setVisibility('invis2', 'inline'); setVisibility('test1', 'none');">Pagina 1/5<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div>
+
+
+<div id="invis2">
+<h3>3. Je hebt een opdracht gekregen om een onderzoek te doen naar een bepaald onderwerp, maar gedurende je onderzoek kost het je heel veel moeite om je voor de taak te motiveren. Wat kun je op dit moment het beste doen? Vergelijk dit antwoord ook met je collega's.</h3><p>
+<TEXTAREA Name="toets3_vraag3" rows="4" cols="50" onChange='changeBack(this.value, this.name)'></TEXTAREA> 
+<!--
+<input value="a" name="group3" onClick="Engine(3, this.value)" type="radio" class="radio">Maak gebruik van een 'buddy-systeem' waarbij een persoon de verantwoordelijke is voor een ander, en als de ander iets fout doet, de buddy op het matje geroepen wordt. <br>
+<input value="c" name="group3" onClick="Engine(3, this.value)" type="radio" class="radio">Benoem een tiental mensen tot afdelingsmanager zodat er meer mensen zijn waarop rekenschap kan worden afgelegd<br>
+<input value="b" name="group3" onClick="Engine(3, this.value)" type="radio" class="radio">Benoem slechts één of twee afdelingshoofden met elk een gespecialiseerde taak en gebied waar ze rekenschap op moeten afleggen. <br>
+<input value="d" name="group3" onClick="Engine(3, this.value)" type="radio" class="radio">Zorg ervoor dat mensen hun eigen bijdragen bijhouden zodat het duidelijker wordt voor de leidinggevenden bij wie het probleem ligt. 
+<br />
+-->
+<br />
+
+<h3>4. Ontwikkeling kan worden gezien als een opdracht. Je begint ergens aan, doet onderzoek, neemt een besluit/verzint een oplossing, meer onderbouwend onderzoek, voert een taak uit en ontvangt feedback.
+Hier eindigt de ontwikkeling echter niet maar dit is juist het begin. Welke van de onderstaande termen is het meest van toepassing op de term 'ontwikkeling' en waarom? </h3><p>
+<input value="b" name="toets3_vraag4" onClick="changeBack(this.value, this.name)" type="radio" class="radio">Een herhalingsproces<br>
+<input value="a" name="toets3_vraag4" onClick="changeBack(this.value, this.name)" type="radio" class="radio">Een stratagie<br>
+<input value="c" name="toets3_vraag4" onClick="changeBack(this.value, this.name)" type="radio" class="radio">Een onderzoek<br>
+<input value="d" name="toets3_vraag4" onClick="changeBack(this.value, this.name)" type="radio" class="radio">Een linear proces<br>
+<TEXTAREA Name="group1" rows="4" cols="20" onChange='changeBack()'></TEXTAREA> 
+</p>
+
+<br /><p2 onclick="setVisibility('invis3', 'inline'); setVisibility('invis2', 'none');">Pagina 2/5<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div> 
+
+<div id="invis3">
+<h3>5. In de manual wordt gesproken over 'onbewust en bekwaam', wat wordt hiermee bedoelt? </h3><p>
+<TEXTAREA Name="toets3_vraag5" rows="4" cols="50" onChange='changeBack(this.value, this.name)'></TEXTAREA> 
+<!--
+<input value="a" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door een strak schema in elkaar te zetten en het te volgen. Beloon jezelf als je dingen goed doet, en bestraf de fouten<br>
+<input value="d" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door rust en structuur te balanceren, evenals straf en beloning<br>
+<input value="c" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door niet te veel te focussen op het doel. Kijk ook naar de dingen die mis kunnen gaan<br>
+<input value="b" name="group5" onClick="Engine(5, this.value)" type="radio" class="radio">Door positief te denken en jezelf voor goed gedrag te belonen
+<br />
+-->
+<br />
+
+<h3>6. Ga bij jezelf na wanneer je voor het laatst een moment hebt gehad dat je hebt gemerkt dat je 'onbewust en onbekwaam was' en wat je daartegen hebt gedaan, kun je niet zo een moment verzinnen wees dan niet bang om het aan je collega's te vragen?</h3><p>
+<TEXTAREA Name="toets3_vraag6" rows="4" cols="50" onChange='changeBack(this.value, this.name)'></TEXTAREA> 
+<!--
+<input value="a" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Er zo veel mogelijk mensen bij betrekken zodat je een gebalanceerd geheel aan meningen en perspectieven krijgt<br>
+<input value="c" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Experts op verschillende vlakken erbij betrekken zodat je beter geïnformeerde ideeën kan vormen<br>
+<input value="b" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Met een klein maar hecht en gebalanceerd team <br>
+<input value="d" name="group6" onClick="Engine(6, this.value)" type="radio" class="radio">Alleen<br></p>
+-->
+
+<br /><p2 onclick="setVisibility('invis4', 'inline'); setVisibility('invis3', 'none');">Pagina 3/5<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div> 
+
+<div id="invis4">
+<h3>7. Mensen wie veel hebben meegemaakt in een bepaald vakgebied worden vaak gezien als experts omdat ze veel 'ervaring' hebben. Wat kan hierbij echter een valkuil zijn?</h3><p>
+<TEXTAREA Name="toets3_vraag7" rows="4" cols="50" onChange='changeBack(this.value, this.name)'></TEXTAREA> 
+<!--
+<input value="b" name="group5" onClick="Engine(7, this.value)" type="radio" class="radio">Vertel hem dat hij gelijk heeft, en dat het nadenken over een idee de reden is dat jullie samen zijn. Vraag over welke onderdelen hij vindt dat er te weinig over nagedacht is, en waar hij de grens zou trekken dat dat geen probleem meer is. <br>
+<input value="a" name="group5" onClick="Engine(7, this.value)" type="radio" class="radio">Vertel hem dat teveel denken, analyseren en theorie een voorstel te ver zou verwateren om nog iets nuttigs of creatiefs te behouden. 'Analysis-paralysis' ligt op de loer. <br>
+<input value="c" name="group5" onClick="Engine(7, this.value)" type="radio" class="radio">Vertel hem dat een opstel nooit helemáál doordacht kan worden. Zolang een idee nog niet is gerealiseerd, zullen er altijd onduidelijkheden blijven bestaan. Dit soort opmerkingen komen voort uit een tekort aan zelfvertrouwen en durf.<br /><br />
+-->
+
+<h3>8. Vraag eens aan je collega's online wat hun kernkwaliteiten zijn en of ze ook een duidelijke uitdaging (eigenschap welke averechts staat aan de kernkwaliteit) hebben. Herken je dit bij hun? Kun je dat bevestigen met een voorbeeld waar de kernkwaliteit en de uitdaging centraal staat?</h3><p>
+<TEXTAREA Name="toets3_vraag8" rows="4" cols="50" onChange='changeBack(this.value, this.name)'></TEXTAREA> 
+<!--
+<input value="a" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter is vooral een negatieve kracht die verandering probeert te voorkomen, dus je kan hem beter zo veel mogelijk negeren. Negatief denken werkt contraproductief als je resultaten wilt bereiken<br>
+<input value="c" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter is een onderdeel van je verstand dat je waarschuwt voor gevaren, dus je kan er beter naar luisteren<br>
+<input value="b" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter is vooral een negatieve kracht die verandering probeert te voorkomen, maar het kan nuttig zijn om naar hem te luisteren zodat je wat beter voorbereid bent op wat er komen gaat<br>
+<input value="d" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter geeft vaak een genuanceerd beeld van wat de verandering in kan houden, zowel positief als negatief. Je kan het beste met hem een gebalanceerd dialoog aan gaan. <br></p>
+-->
+</p><br /><p2 onclick="setVisibility('invis5', 'inline'); setVisibility('invis4', 'none');">Pagina 4/5<img src="../misc_files/ArrowRight.png" width="15" height="15" /></p2>
+</div>
+
+<div id="invis5">
+<h3>9. Stel je werkt bij een technologiebedrijf wat hoge kwaliteit computeronderdelen maakt. 5 Jaar geleden is het bedrijf opgezet omdat hij de consumenten is ontdekt dat er een behoefte was aan hoge kwaliteit computeronderdelen. 
+Echter wordt de verkoop steeds lager terwijl de directie hun producten voortdurend aan het verbeteren is met nieuwe en dure onderdelen welke duurzamer, sneller en effecienter werken. 
+Wat is volgens ons onderwerp hier het probleem?</h3><p>
+<TEXTAREA Name="toets3_vraag9" rows="4" cols="50" onChange='changeBack(this.value, this.name)'></TEXTAREA> 
+<!--
+<input value="b" name="group5" onClick="Engine(7, this.value)" type="radio" class="radio">Vertel hem dat hij gelijk heeft, en dat het nadenken over een idee de reden is dat jullie samen zijn. Vraag over welke onderdelen hij vindt dat er te weinig over nagedacht is, en waar hij de grens zou trekken dat dat geen probleem meer is. <br>
+<input value="a" name="group5" onClick="Engine(7, this.value)" type="radio" class="radio">Vertel hem dat teveel denken, analyseren en theorie een voorstel te ver zou verwateren om nog iets nuttigs of creatiefs te behouden. 'Analysis-paralysis' ligt op de loer. <br>
+<input value="c" name="group5" onClick="Engine(7, this.value)" type="radio" class="radio">Vertel hem dat een opstel nooit helemáál doordacht kan worden. Zolang een idee nog niet is gerealiseerd, zullen er altijd onduidelijkheden blijven bestaan. Dit soort opmerkingen komen voort uit een tekort aan zelfvertrouwen en durf.<br /><br />
+-->
+
+<h3>10. Maak voor jezelf een kernkwadrant of neem er 1 welke je al hebt gemaakt. Ga na wat jou kernkwaliteit is en wat je uitdaging en allergie is en zoek anderen op met dezelfde uitdaging en allergie. Vraag hoe zij hiermee omgaan en welke oplossing zij ervoor hebben en noteer hieronder wat jij hiermee kan.</h3><p>
+<TEXTAREA Name="toets3_vraag10" rows="4" cols="50" onChange='changeBack(this.value, this.name)'></TEXTAREA> 
+<!--
+<input value="a" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter is vooral een negatieve kracht die verandering probeert te voorkomen, dus je kan hem beter zo veel mogelijk negeren. Negatief denken werkt contraproductief als je resultaten wilt bereiken<br>
+<input value="c" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter is een onderdeel van je verstand dat je waarschuwt voor gevaren, dus je kan er beter naar luisteren<br>
+<input value="b" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter is vooral een negatieve kracht die verandering probeert te voorkomen, maar het kan nuttig zijn om naar hem te luisteren zodat je wat beter voorbereid bent op wat er komen gaat<br>
+<input value="d" name="group6" onClick="Engine(8, this.value)" type="radio" class="radio">De grenswachter geeft vaak een genuanceerd beeld van wat de verandering in kan houden, zowel positief als negatief. Je kan het beste met hem een gebalanceerd dialoog aan gaan. <br></p>
+-->
+</p><center>
+<input onClick="Test_result(2)" type="image" src="submit.png">
+</center>
+</form>
+<hr>
+
+</div>
+
+</div>
+
+<div class="ex" id="leaderboard">
+    <iframe src="inhoud_h3.php" height="650" width="175" frameborder="0">
+	<p>Your browser does not support iframes.</p>
+	</iframe>
+</div>
+
+</body>
+</html>

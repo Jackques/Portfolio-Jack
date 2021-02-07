@@ -1,0 +1,27 @@
+#gegevens_profiel, #agenda_profiel, #cijfer_profiel, #competenties_profiel, #portfolio_profiel{
+overflow:hidden;
+height:30px;
+}
+
+#mijngegevensbut, #mijnagendabut, #mijncijferbut, #mijncompetentiesbut, #mijnportfoliosbut{
+display:inline;
+vertical-align:middle;
+
+font-size:1.5em;
+}
+
+#mijn_gegevens_tabel tbody tr td{
+vertical-align:top;
+}
+
+#mijn_agenda_tabel, #mijn_competenties_tabel{
+width:100%;
+}
+
+#mijn_cijfer_tabel{
+width:80%;
+}
+
+#editbut{
+margin-left:5px;
+}

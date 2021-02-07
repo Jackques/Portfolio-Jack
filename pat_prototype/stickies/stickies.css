@@ -1,0 +1,54 @@
+:focus {
+	outline:0;
+}
+.add-sticky {
+	z-index:2;
+	cursor: default;
+	position:absolute;
+	top:14%;
+	left: 19%;
+	font-size:200%;
+	background:#066;
+	color:#fff;
+	border:2px solid #fff;
+	border-radius:40px;
+	-webkit-border-radius:40px;
+	-moz-border-radius:40px;
+	text-align:center;
+	line-height:25px;
+	width:30px;
+	height:30px;
+}
+.add-sticky:hover {
+	z-index:2;
+	background: #147a7a;
+}
+.sticky {
+	position:absolute;
+	top:14%;
+	left: 19%;
+	width:150px;
+	background:url(../images/sticky-bg.png);
+	background-repeat:no-repeat;
+}
+.sticky-content {
+	min-height:100px;
+	margin-left:15px;
+	padding:5px;
+	overflow:hidden;
+}
+.sticky-header {
+	padding:5px;
+}
+.sticky-status {
+	color:#ccc;
+	padding:5px;
+}
+.close-sticky {
+	background:url(../images/delete.png);
+	background-repeat:no-repeat;
+	color:rgba(255,255,255,0);
+	float:right;
+	cursor:default;
+	padding:1px 5px;
+}

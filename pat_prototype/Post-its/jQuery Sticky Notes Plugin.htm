@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="ui-widget-content" lang="en_US">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>jQuery Sticky Notes Plugin</title>
+
+<link rel="stylesheet" href="jQuery%20Sticky%20Notes%20Plugin_files/jquery-ui-1.css" type="text/css">
+<link rel="stylesheet" href="jQuery%20Sticky%20Notes%20Plugin_files/form.css" type="text/css">
+
+<script type="text/javascript" src="jQuery%20Sticky%20Notes%20Plugin_files/jquery-1.js"></script>
+<script type="text/javascript" src="jQuery%20Sticky%20Notes%20Plugin_files/jquery-ui-1.js"></script>
+</head>
+
+<body style="cursor: auto;">
+<div class="ui-tabs-panel ui-widget-content ui-corner-bottom" id="tab2" data-tabid="demo">
+  <div id="notes" style="width:200px;height:800px;">
+		<div id="sticky-container" class="sticky-container">
+        	<button id="add_note">Add note</button>
+			<div class="jSticky-medium ui-resizable ui-draggable" id="note-2" style="position: absolute; top: 50px; left: 145px; float: left;">
+			<div class="background"><img src="Post-it_files/sticky-bg.png" class="stretch" style="margin-top: 5px;" alt=""></div>
+        	<div class="jSticky-delete"></div>
+        	<div unselectable="on" style="z-index: 1001; -moz-user-select: none;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se">
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="jQuery%20Sticky%20Notes%20Plugin_files/jquery.js"></script>
+
+<link rel="stylesheet" href="jQuery%20Sticky%20Notes%20Plugin_files/jquery.css" type="text/css">
+
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function() {
+	var options = {
+	};
+	jQuery("#notes").stickyNotes(options);
+});
+</script>
+</div>
+</body></html>

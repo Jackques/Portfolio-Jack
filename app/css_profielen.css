@@ -1,0 +1,74 @@
+.hfdm_traject_colorchange{
+height:3em;
+min-height:35px;
+position:fixed;
+width:100%;
+min-height:35px;
+background-color:black;
+z-index: 2;
+border-bottom:solid;
+border-width:0.5px;
+}
+#hfdm_text_maakprofiel{
+color:#8ecd00;
+}
+#hfdm_text_maaktrajectaan{
+color:white;
+font-size:150%;
+text-align:center;
+margin-top:5px;
+margin-bottom:5px;
+text-shadow:none;
+white-space:nowrap;
+}
+#hfdm_maaktrajectaan{
+border-top:solid;
+border-width:0,5px;
+margin:0px;
+}
+
+#hfdm_maakprofiel{
+text-align:center;
+}
+
+#hfdm_headbar{
+
+border-bottom:solid;
+border-width:0.5px;
+}
+#hfdm_text_user{
+color:white;
+text-decoration:none;
+border:none;
+margin:0.50%;
+}
+.ui-link{
+text-decoration:none;
+}
+#traject_naam_veld{
+background: none !important;
+color:white;
+text-shadow:none;
+}
+.ui-body-c, .ui-overlay-c{
+background: none !important;
+border:none !important;
+}
+.ui-input-text.ui-focus{
+-webkit-box-shadow: none;
+}
+#input_wrapper{
+border-bottom:solid;
+border-width:1px;
+border-bottom-color:white;
+}
+.ui-input-search, div.ui-input-text{
+margin:0px;
+}
+#hfdm_colorpicker{
+height:15em;
+min-height:35px;
+}
+.farbtastic{
+margin:auto;
+}

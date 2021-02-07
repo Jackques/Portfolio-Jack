@@ -1,0 +1,195 @@
+body{
+background-image:url('../images/algemeen/background.jpg');
+background-repeat:repeat;
+}
+/* bg zou beter aanpassen aan hoogte en breedte scherm?*/
+#header{
+background-image:url('../images/algemeen/header_background.jpg');
+background-repeat:repeat-x;
+
+width:100%;
+height:135px;
+position:relative;
+}
+#shadow{
+background-image:url('../images/algemeen/shadow.png');
+background-repeat:repeat-x;
+position:absolute;
+width:100%;
+height:31px;
+}
+#main{
+background-image:url('../images/algemeen/main_bg.png');
+margin-left:auto;
+margin-right:auto;
+height:800px;
+margin-bottom:2%;
+width:80%;
+padding:2%;
+}
+/* main_bg zou beter aanpassen aan hoogte en breedte scherm?*/
+
+#main_menu{
+margin-left:6%;
+width:1100px;
+height:31px;
+text-align:center;
+
+bottom:5px;
+position:absolute;
+}
+#logo{
+width:250px;
+height:75px;
+text-align:center;
+float:right;
+clear:right;
+margin-right:20%;
+}
+.main_menu_button{
+padding-left:10px;
+padding-right:10px;
+height:40px;
+display:block;
+background-image:url('../images/algemeen/sub_menu_bg.png');
+}
+.main_menu_button_text{
+font-family:Tahoma,Geneva,Kalimati,sans-serif;
+color:#ffffff;
+font-style:normal;
+font-size:1em;
+text-shadow: 0 0 1px #ffffff;
+
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.sub_text{
+font-family:Tahoma,Geneva,Kalimati,sans-serif;
+color:#ffffff;
+font-style:normal;
+font-size:1em;
+text-shadow: 0 0 1px #ffffff;
+
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+#social_media_com{
+background-image:url('../images/home/sub_menu_bg.png');
+position:fixed;
+bottom: 5%;
+right:10%;
+width:10%;
+height:5%;
+}
+
+#searchbar{
+background-image:url('../images/algemeen/searchbar.png');
+width:150px;
+height:20px;
+float:right;
+vertical-align:center;
+}
+#searchbar_searchbut{
+padding:1%;
+width:20px;
+height:20px;
+float:right;
+}
+#helpbutton{
+float:right;
+margin-left:10px;
+width:20px;
+height:20px;
+}
+
+#app_addbutton{
+background-image:url('../images/home/add_appbutton.jpg');
+width:114px;
+height:114px;
+}
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+.clear {clear:both}	
+/* remove the list style */
+#nav {
+	margin:0; 
+	padding:0; 
+	list-style:none;
+}	
+	
+	/* make the LI display inline */
+	/* it's position relative so that position absolute */
+	/* can be used in submenu */
+	
+	#nav li {
+		float:left; 
+		display:block; 
+		width:125px;
+		background-image:url('../images/algemeen/sub_menu_bg.png'); 
+		position:relative;
+		z-index:500; 
+		margin:0 1px;
+	}
+	
+	.first{
+	background:none !important;
+	}	
+		
+	/* this is the parent menu */
+	#nav li a {
+		display:block; 
+		padding:8px 5px 0 5px; 
+		font-weight:bold;  
+		height:23px; 
+		text-decoration:none; 
+		color:#fff; 
+		text-align:center; 
+		color:#333;
+	}
+
+	#nav li a:hover {
+		color:#fff;
+	}
+	
+		/* submenu, it's hidden by default */
+		#nav ul {
+			position:absolute; 
+			left:0; 
+			display:none; 
+			margin:0 0 0 -1px; 
+			padding:5px; 
+			list-style:none;
+		}
+		
+		#nav ul li {
+			width:150px;
+			float:left; 
+			border-top:1px solid #858585;
+		}
+		
+		/* display block will make the link fill the whole area of LI */
+		#nav ul a {
+			display:block;  
+			height:15px;
+			padding: 8px 5px; 
+			color:#858585;
+		}
+		
+		#nav ul a:hover {
+			text-decoration:underline;	
+		}
+
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+*html #nav ul {
+	margin:0 0 0 -2px;
+}
+
